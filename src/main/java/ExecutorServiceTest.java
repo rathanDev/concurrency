@@ -13,21 +13,21 @@ public class ExecutorServiceTest {
         ExecutorServiceTest.runnableTest();
     }
 
-    public static void test() {
+    private static void test() {
         Runnable task = () -> System.out.println(Thread.currentThread().getName() + " is running");
 
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         executorService.submit(task);
     }
 
-    public static void rawThreadTest() {
+    private static void rawThreadTest() {
         Runnable task = () -> System.out.println(Thread.currentThread().getName() + " is running");
 
         Thread thread = new Thread(task);
         thread.start();
     }
 
-    public static void runnableTest() {
+    private static void runnableTest() {
         Runnable task = () -> System.out.println(Thread.currentThread().getName() + " is running");
         task.run();
     }
